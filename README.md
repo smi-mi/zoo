@@ -14,7 +14,7 @@ zoo.listen();  // Lion: pppppp!
 ## Class Animal
 Base class for animal. Has two virtual methods: `speak()` and `move()` which you have to implement in your own derived classes.
 Implemented derived classes:
-| Derived class | speack() | move() |
+| Derived class | speak() | move() |
 |---------|-------|------|
 | Duck | Duck: кря-кря! | Duck: летит! |
 | Lion | Lion: pppppp! | Lion: бежит! |
