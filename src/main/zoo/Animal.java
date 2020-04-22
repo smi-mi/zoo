@@ -3,6 +3,12 @@ package zoo;
 public abstract class Animal {
     private final String m_name;
 
+    public enum Kind {
+        BIRD,
+        MAMMAL,
+        REPTILE
+    }
+
     public Animal(final String name) {
         m_name = name;
     }
