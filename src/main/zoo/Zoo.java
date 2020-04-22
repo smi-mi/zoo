@@ -49,6 +49,21 @@ public class Zoo {
 
     /**
      * 
+     * @param kind to count
+     * @return number of animals with equal kind
+     */
+    public int countEquals(Animal.Kind kind) {
+        int result = 0;
+        for (int i = 0; i < m_animalsNum; ++i) {
+            if (m_animals[i].getKind() == kind) {
+                ++result;
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 
      * @return speach of each animal joined together if the zoo is open
      */
     public String listen() {
