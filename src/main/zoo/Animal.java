@@ -22,6 +22,11 @@ public abstract class Animal {
     public final String getName() { return m_name; }
     /**
      * 
+     * @return kind of the animal
+     */
+    public final Kind getKind() { return m_kind; }
+    /**
+     * 
      * @return animal's speach
      */
     public abstract String speak();
