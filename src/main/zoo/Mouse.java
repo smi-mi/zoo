@@ -2,7 +2,7 @@ package zoo;
 
 public class Mouse extends Animal {
     public Mouse() {
-        super("мыш");
+        super("мыш", Kind.MAMMAL);
     }
 
     public String speak() {

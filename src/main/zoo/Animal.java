@@ -2,6 +2,7 @@ package zoo;
 
 public abstract class Animal {
     private final String m_name;
+    private final Kind m_kind;
 
     public enum Kind {
         BIRD,
@@ -9,8 +10,9 @@ public abstract class Animal {
         REPTILE
     }
 
-    public Animal(final String name) {
+    public Animal(final String name, final Kind kind) {
         m_name = name;
+        m_kind = kind;
     }
 
     /**

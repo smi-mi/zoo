@@ -2,7 +2,7 @@ package zoo;
 
 public class Lion extends Animal {
     public Lion() {
-        super("Lion");
+        super("Lion", Kind.MAMMAL);
     }
 
     public String speak() {
