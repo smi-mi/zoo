@@ -17,7 +17,7 @@ public class ZooTest {
     }
 
     @Test
-    public void addAnimals() {
+    public void addAnimalsTest() {
         final Zoo zoo = new Zoo(3);
         assertEquals(zoo.addAnimal(new Lion()), "Lion was added successfully!\n");
         assertEquals(zoo.addAnimal(null), "Animal is null!\n");
@@ -27,7 +27,7 @@ public class ZooTest {
     }
 
     @Test
-    public void listenAnimals() {
+    public void listenAnimalsTest() {
         assertEquals(new Duck().speak(), "Duck: кря-кря!\n");
         assertEquals(new Lion().speak(), "Lion: pppppp!\n");
         assertEquals(new Monkey().speak(), "Monkey: y-aa y-aa!\n");
@@ -42,7 +42,7 @@ public class ZooTest {
     }
 
     @Test
-    public void watchAnimals() {
+    public void watchAnimalsTest() {
         assertEquals(new Duck().move(), "Duck: летит!\n");
         assertEquals(new Lion().move(), "Lion: бежит!\n");
         assertEquals(new Monkey().move(), "Monkey: лазает по деревьям!\n");
@@ -53,5 +53,59 @@ public class ZooTest {
         zoo.addAnimal(new Mouse());
         zoo.open();
         assertEquals(zoo.watch(), "Lion: бежит!\nMonkey: лазает по деревьям!\nмыш (кродёться)\n");
+    }
+
+    @Test
+    public void getKindTest() {
+        Animal animal = new Duck();
+        assertEquals(Animal.Kind.BIRD, animal.getKind());
+        
+        animal = new Lion();
+        assertEquals(Animal.Kind.MAMMAL, animal.getKind());
+        
+        animal = new Monkey();
+        assertEquals(Animal.Kind.MAMMAL, animal.getKind());
+        
+        animal = new Mouse();
+        assertEquals(Animal.Kind.MAMMAL, animal.getKind());
+
+        animal = new Snake();
+        assertEquals(Animal.Kind.REPTILE, animal.getKind());
+    }
+
+    @Test
+    public void countEqualsTest() {
+        Zoo zoo = new Zoo();
+        zoo.open();
+
+        zoo.addAnimal(new Lion());
+        assertEquals(1, zoo.countEquals(Animal.Kind.MAMMAL));
+        assertEquals(0, zoo.countEquals(Animal.Kind.BIRD));
+        assertEquals(0, zoo.countEquals(Animal.Kind.REPTILE));
+
+        zoo.addAnimal(new Duck());
+        assertEquals(1, zoo.countEquals(Animal.Kind.MAMMAL));
+        assertEquals(1, zoo.countEquals(Animal.Kind.BIRD));
+        assertEquals(0, zoo.countEquals(Animal.Kind.REPTILE));
+
+        zoo.addAnimal(new Mouse());
+        assertEquals(2, zoo.countEquals(Animal.Kind.MAMMAL));
+        assertEquals(1, zoo.countEquals(Animal.Kind.BIRD));
+        assertEquals(0, zoo.countEquals(Animal.Kind.REPTILE));
+
+        zoo.addAnimal(new Snake());
+        assertEquals(2, zoo.countEquals(Animal.Kind.MAMMAL));
+        assertEquals(1, zoo.countEquals(Animal.Kind.BIRD));
+        assertEquals(1, zoo.countEquals(Animal.Kind.REPTILE));
+
+        zoo.addAnimal(new zoo.Monkey());
+        assertEquals(3, zoo.countEquals(Animal.Kind.MAMMAL));
+        assertEquals(1, zoo.countEquals(Animal.Kind.BIRD));
+        assertEquals(1, zoo.countEquals(Animal.Kind.REPTILE));
+
+        zoo.addAnimal(new Duck());
+        assertEquals(3, zoo.countEquals(Animal.Kind.MAMMAL));
+        assertEquals(2, zoo.countEquals(Animal.Kind.BIRD));
+        assertEquals(1, zoo.countEquals(Animal.Kind.REPTILE));
     }
 }
