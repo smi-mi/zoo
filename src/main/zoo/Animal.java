@@ -45,13 +45,20 @@ public abstract class Animal {
      * @return way of movement
      */
     public abstract String move();
-/**
- * 
- * Add animal of the same kind to friends list.
- * 
- * @param friend animal to get friends with
- * @return true if friend was added successfully
- */
+    /**
+     * 
+     * Produce children.
+     * 
+     * @return list of children
+     */
+    public abstract List<Animal> makeProgeny();
+    /**
+     * 
+     * Add animal of the same kind to friends list.
+     * 
+     * @param friend animal to get friends with
+     * @return true if friend was added successfully
+     */
     public boolean addFriend(Animal friend) {
         return m_kind == friend.getKind() || m_friends.add(friend);
     }
