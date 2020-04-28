@@ -32,6 +32,11 @@ public abstract class Animal {
     public final Kind getKind() { return m_kind; }
     /**
      * 
+     * @return list of friends
+     */
+    public final List<Animal> geetFriendsList() { return m_friends; }
+    /**
+     * 
      * @return animal's speach
      */
     public abstract String speak();
