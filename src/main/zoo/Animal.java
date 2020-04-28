@@ -1,8 +1,12 @@
 package zoo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Animal {
     private final String m_name;
     private final Kind m_kind;
+    private List<Animal> m_friends;
 
     public enum Kind {
         BIRD,
@@ -13,6 +17,7 @@ public abstract class Animal {
     public Animal(final String name, final Kind kind) {
         m_name = name;
         m_kind = kind;
+        m_friends = new ArrayList<>();
     }
 
     /**
@@ -35,4 +40,14 @@ public abstract class Animal {
      * @return way of movement
      */
     public abstract String move();
+/**
+ * 
+ * Add animal of the same kind to friends list.
+ * 
+ * @param friend animal to get friends with
+ * @return true if friend was added successfully
+ */
+    public boolean addFriend(Animal friend) {
+        return m_kind == friend.getKind() || m_friends.add(friend);
+    }
 }
