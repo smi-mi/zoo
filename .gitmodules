@@ -1,3 +1,6 @@
 [submodule "hash-table"]
 	path = hash-table
 	url = https://github.com/smi-mi/hash-table
+[submodule "submodule"]
+	path = submodule
+	url = https://github.com/smi-mi/submodule
