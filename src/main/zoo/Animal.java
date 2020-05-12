@@ -60,6 +60,6 @@ public abstract class Animal {
      * @return true if friend was added successfully
      */
     public boolean addFriend(Animal friend) {
-        return m_kind == friend.getKind() && m_friends.add(friend);
+        return m_kind == friend.getKind() || m_friends.add(friend);
     }
 }
