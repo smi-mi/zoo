@@ -13,21 +13,18 @@ zoo.countEquals(Animal.Kind.BIRD);  // 1
 ```
 ----
 ## Class Animal
-Base class for animal.
-<br>Every animal is one of the three kinds: `BIRD`, `MAMMAL` or `REPTILE`.</br>
-Every animal can become friends with animal of the same kind. 
-<br>Has three virtual methods: `speak()`, `move()` and `makeProgeny()` which you have to implement in your own derived classes.</br>
-
-| Derived class | kind | speak() | move() | Offspring |
-|---------|------|-------|------|-------|
-| Duck | `BIRD` | Duck: кря-кря! | Duck: летит! | 5 - 13 |
-| Lion | `MAMMAL` | Lion: pppppp! | Lion: бежит! | 1 - 4 |
-| Monkey | `MAMMAL` | Monkey: y-aa y-aa! | Monkey: лазает по деревьям! | 1 |
-| Mouse | `MAMMAL` | мыш: пи-пи-пи! | мыш (кродёться) | 3 - 12 |
-| Snake | `REPTILE` | Snake: шшш_шшш! | Snake: ползёт! | 8 - 20 |
+Base class for animal. Every animal is one of the three kinds: `BIRD`, `MAMMAL` or `REPTILE`. Has two virtual methods: `speak()` and `move()` which you have to implement in your own derived classes.
+Implemented derived classes:
+| Derived class | kind | speak() | move() |
+|---------|------|-------|------|
+| Duck | `BIRD` | Duck: кря-кря! | Duck: летит! |
+| Lion | `MAMMAL` | Lion: pppppp! | Lion: бежит! |
+| Monkey | `MAMMAL` | Monkey: y-aa y-aa! | Monkey: лазает по деревьям! |
+| Mouse | `MAMMAL` | мыш: пи-пи-пи! | мыш (кродёться) |
+| Snake | `REPTILE` | Snake: шшш_шшш! | Snake: ползёт! |
 ----
 ## Class Zoo
 Main class of the project. Can be open or closed.
-<br>Method `listen()` provides you with speach of each animal in the order you added them.</br>
+Method `listen()` provides you with speach of each animal in the order you added them.
 Method `watch()` provides you with way of movement of each animal in the order you added them.
-<br>Method `countEquals(Animal.Kind kind)` counts animals of the kind.</br>
+Method `countEquals(Animal.Kind kind)` counts animals of the kind.
